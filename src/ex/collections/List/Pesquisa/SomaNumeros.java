@@ -10,7 +10,7 @@ public class SomaNumeros {
         this.num = new ArrayList<>();
     }
 
-    public void adicionarNumero(int numero){
+    public void adicionarNumeroPesquisa(int numero){
         num.add(numero);
         System.out.println("Número adicionado com sucesso");
     }
@@ -67,11 +67,11 @@ public class SomaNumeros {
         SomaNumeros somaNumeros = new SomaNumeros();
 
         // Adicionando números à lista
-        somaNumeros.adicionarNumero(5);
-        somaNumeros.adicionarNumero(0);
-        somaNumeros.adicionarNumero(0);
-        somaNumeros.adicionarNumero(-2);
-        somaNumeros.adicionarNumero(10);
+        somaNumeros.adicionarNumeroPesquisa(5);
+        somaNumeros.adicionarNumeroPesquisa(0);
+        somaNumeros.adicionarNumeroPesquisa(0);
+        somaNumeros.adicionarNumeroPesquisa(-2);
+        somaNumeros.adicionarNumeroPesquisa(10);
 
         // Exibindo a lista de números adicionados
         System.out.print("Números adicionados: ");

@@ -60,19 +60,17 @@ public class CarrinhoDeCompras {
         Item item = new Item(null, 0, 0);
         Scanner scanner = new Scanner(System.in);
         
-        int n = 0;
-        
-        while (n != 4){
+        while (true){
             System.out.println("""
 
-            [ 1 ] Adicionar item manualmente.
+            [ 1 ] Adicionar item.
             [ 2 ] Exibir itens.
             [ 3 ] Remover item.
             [ 4 ] Finalizar compra.
 
             Escolha uma opção: """);
             
-            n = scanner.nextInt();
+            int n = scanner.nextInt();
             scanner.nextLine();
 
             switch (n) {
@@ -108,6 +106,7 @@ public class CarrinhoDeCompras {
                 case 4 -> System.out.println("O valor total da compra é = " + carrinhoDeCompras.calcularValorTotal());
                 default -> System.out.println("Opção inválida, tente novamente.");
             }
+            if (n == 4) break;
         }
         scanner.close();
     }

@@ -2,7 +2,9 @@ package ex.collections.List.Ordenação;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.InputMismatchException;
 import java.util.List;
+import java.util.Scanner;
 
 public class Numeros {
     private List<Integer> listaNum;
@@ -18,7 +20,6 @@ public class Numeros {
 
     public List<Integer> ordenarAscendente(){
         if (!listaNum.isEmpty()){
-            //List<Integer> numAscendente = new ArrayList<>(this.listaNum);
             Collections.sort(listaNum);
             return listaNum;
         } else {
@@ -44,29 +45,45 @@ public class Numeros {
     }
 
     public static void main(String[] args) {
-        // Criando uma instância da classe Numeros
+        Scanner scanner = new Scanner(System.in);
         Numeros numeros = new Numeros();
     
-        // Adicionando números à lista
-        numeros.adicionarNumeroOrdenacao(2);
-        numeros.adicionarNumeroOrdenacao(5);
-        numeros.adicionarNumeroOrdenacao(4);
-        numeros.adicionarNumeroOrdenacao(1);
-        numeros.adicionarNumeroOrdenacao(99);
-    
-        // Exibindo a lista de números adicionados
-        numeros.exibirNumeros();
-    
-        // Ordenando e exibindo em ordem ascendente
-        System.out.println(numeros.ordenarAscendente());
-    
-        // Exibindo a lista
-        numeros.exibirNumeros();
-    
-        // Ordenando e exibindo em ordem descendente
-        System.out.println(numeros.ordenarDescendente());
-    
-        // Exibindo a lista
-        numeros.exibirNumeros();
+        while (true) { 
+            System.out.println("""
+
+            [ 1 ] Adicionar número.
+            [ 2 ] Exibir números.
+            [ 3 ] Ordenar ascendente.
+            [ 4 ] Ordenar descendente.
+            [ 5 ] Sair do programa.
+
+            Escolha uma opção: """);
+            
+            int n = scanner.nextInt();
+            scanner.nextLine();
+
+            switch (n){
+                case 1 -> {
+                    try {
+                        System.out.print("\nDigite um número: ");
+                        int numero = scanner.nextInt();
+                        scanner.nextLine(); 
+                        numeros.adicionarNumeroOrdenacao(numero);
+                    } catch (InputMismatchException e) {
+                        System.out.println("Erro: Deve ser um número inteiro.");
+                        scanner.nextLine(); 
+                    }
+                }
+                case 2 -> numeros.exibirNumeros();
+                case 3 -> System.out.println(numeros.ordenarAscendente());
+                case 4 -> System.out.println(numeros.ordenarDescendente());
+                case 5 -> System.out.println("Saindo do programa.");
+                default -> System.out.println("Opção inválida, tente novamente.");
+            }
+            if (n == 5){
+                break;
+            }
+        }
+        scanner.close();
     }
 }

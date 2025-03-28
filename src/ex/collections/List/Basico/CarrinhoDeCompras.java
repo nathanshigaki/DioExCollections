@@ -62,7 +62,7 @@ public class CarrinhoDeCompras {
         
         while (true){
             System.out.println("""
-
+                    
             [ 1 ] Adicionar item.
             [ 2 ] Exibir itens.
             [ 3 ] Remover item.

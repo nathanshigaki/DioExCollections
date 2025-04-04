@@ -2,11 +2,11 @@ package ex.collections.Set.Pesquisa;
 
 public class Tarefa {
     private String descricao;
-    private boolean estaConcluida = false;
+    private boolean estaConcluida;
     
-    public Tarefa(String descricao, boolean estaConcluida) {
+    public Tarefa(String descricao) {
         this.descricao = descricao;
-        this.estaConcluida = estaConcluida;
+        this.estaConcluida = false;
     }
 
     public String getDescricao() {

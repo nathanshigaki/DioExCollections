@@ -25,8 +25,8 @@ public class ListaTarefas {
                     break;
                 }
             }
-            System.out.println("Tarefa nao encontrada");
         }
+        exibirTarefas();
     }
 
     public void exibirTarefas(){
@@ -45,7 +45,7 @@ public class ListaTarefas {
         Set<Tarefa> tarefasConcluidas = new HashSet<>();
         for (Tarefa t : setTarefas) {
             if (t.isEstaConcluida()) {
-            tarefasConcluidas.add(t);
+                tarefasConcluidas.add(t);
             }
         }
         return tarefasConcluidas;
@@ -131,7 +131,7 @@ public class ListaTarefas {
                         String palavra = scanner.nextLine();
                         setTarefas.removerTarefa(palavra);
                     }
-                    case 3 -> setTarefas.contarTarefas();
+                    case 3 -> System.out.println("Quantidade: "+ setTarefas.contarTarefas());
                     case 4 -> setTarefas.exibirTarefas();
                     case 5 -> {
                         System.out.print("Digite uma tarefa para ser concluida: ");
@@ -143,8 +143,8 @@ public class ListaTarefas {
                         String palavra = scanner.nextLine();
                         setTarefas.marcarTarefaPendente(palavra);
                     }
-                    case 7 -> setTarefas.obterTarefasConcluidas();
-                    case 8 -> setTarefas.obterTarefasPendentes();
+                    case 7 -> System.out.println(setTarefas.obterTarefasConcluidas());
+                    case 8 -> System.out.println(setTarefas.obterTarefasPendentes());
                     case 9 -> setTarefas.limparListaTarefas();
                     case 0 -> {
                         System.out.println("Saindo do programa.");

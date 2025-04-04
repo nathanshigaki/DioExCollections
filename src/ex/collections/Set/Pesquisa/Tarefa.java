@@ -24,4 +24,12 @@ public class Tarefa {
     public void setEstaConcluida(boolean estaConcluida) {
         this.estaConcluida = estaConcluida;
     }
+    
+    @Override
+    public String toString() {
+      return "Tarefa{" +
+          "descricao='" + descricao + '\'' +
+          ", concluida=" + estaConcluida +
+          '}';
+    }
 }

@@ -91,7 +91,7 @@ public class GerenciadorAlunos {
                         gerenciadorAlunos.removerAlunoPorMatricula(matricula);
                     }
                     case 3 -> gerenciadorAlunos.exibirAlunosPorNome();
-                    case 4 ->  gerenciadorAlunos.exibirAlunosPorNota();
+                    case 4 -> gerenciadorAlunos.exibirAlunosPorNota();
                     case 0 -> {
                         System.out.println("Saindo do programa.");
                         scanner.close();
